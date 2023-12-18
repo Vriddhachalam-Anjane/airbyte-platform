@@ -1,6 +1,6 @@
 ---
 "$schema": http://json-schema.org/draft-07/schema#
-"$id": https://github.com/airbytehq/airbyte/blob/master/airbyte-config/models/src/main/resources/types/ApiKey.yaml
+"$id": https://github.com/Vriddhachalam-Anjane/airbyte-platform/blob/0.50.37/airbyte-config/models/src/main/resources/types/ApiKey.yaml
 title: Api Key
 description: An API key for a user or non-user entity i.e. an organization
 type: object
