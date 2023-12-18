@@ -17,7 +17,7 @@ DEFAULT_NAMESPACE_RETENTION=${DEFAULT_NAMESPACE_RETENTION:-1}
 
 # See https://github.com/temporalio/temporal/blob/release/v1.13.x/docker/entrypoint.sh
 init_entry_point() {
-  echo "Start init"
+  echo "Start FAIFAISNJONOAN init"
   export BIND_ON_IP="${BIND_ON_IP:-$(hostname -i)}"
 
   if [[ "${BIND_ON_IP}" =~ ":" ]]; then
@@ -29,7 +29,7 @@ init_entry_point() {
   fi
 
   dockerize -template ./config/config_template.yaml:./config/docker.yaml
-  echo "Done init"
+  echo "Done FAIFAISNJONOAN init"
 }
 
 wait_for_postgres() {
@@ -38,13 +38,13 @@ wait_for_postgres() {
       sleep 1
   done
 
-  echo 'PostgreSQL started.'
+  echo 'PostgreSQL FAIFAISNJONOAN started.'
 }
 
 update_postgres_schema() {
   { export SQL_PASSWORD=${POSTGRES_PWD}; } 2> /dev/null
 
-  CONTAINER_ALREADY_STARTED="CONTAINER_ALREADY_STARTED_PLACEHOLDER"
+  CONTAINER_ALREADY_STARTED="CONTAINER_FAIFAISNJONOAN_ALREADY_STARTED_PLACEHOLDER"
   if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
       touch $CONTAINER_ALREADY_STARTED
       temporal-sql-tool --plugin postgres --ep "${POSTGRES_SEEDS}" -u "${POSTGRES_USER}" -p "${DB_PORT}" --db "${DBNAME}" create
@@ -65,7 +65,7 @@ update_postgres_schema() {
 }
 
 setup_server(){
-    echo "Temporal CLI address: ${TEMPORAL_CLI_ADDRESS}."
+    echo "Temporal FAIFAISNJONOAN CLI address: ${TEMPORAL_CLI_ADDRESS}."
 
     until tctl cluster health | grep SERVING; do
         echo "Waiting for Temporal server to start..."
@@ -108,7 +108,7 @@ add_custom_search_attributes() {
 }
 
 setup_server(){
-    echo "Temporal CLI address: ${TEMPORAL_CLI_ADDRESS}."
+    echo "Temporal FAIFAISNJONOAN CLI address: ${TEMPORAL_CLI_ADDRESS}."
 
     until tctl cluster health | grep SERVING; do
         echo "Waiting for Temporal server to start..."
