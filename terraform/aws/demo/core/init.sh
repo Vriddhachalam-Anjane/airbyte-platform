@@ -20,7 +20,7 @@ install_docker_compose() {
 
 install_airbyte() {
   mkdir airbyte && cd airbyte
-  wget https://raw.githubusercontent.com/airbytehq/airbyte/master/{.env,docker-compose.yaml}
+  wget https://raw.githubusercontent.com/Vriddhachalam-Anjane/airbyte_platform/master/{.env,docker-compose.yaml}
   API_URL=/api/v1/ AIRBYTE_ROLE=demo docker-compose up -d
 }
 
