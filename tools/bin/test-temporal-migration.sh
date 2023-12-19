@@ -12,7 +12,7 @@ fi
 
 NEW_HASH="$( git rev-parse HEAD )"
 
-git checkout main
+git checkout 0.50.37
 git pull --no-rebase
 
 "$SCRIPT_DIR"/../../gradlew -p "$SCRIPT_DIR"/../.. generate-docker
