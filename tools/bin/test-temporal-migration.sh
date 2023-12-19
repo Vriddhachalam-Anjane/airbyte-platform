@@ -18,13 +18,13 @@ git pull --no-rebase
 "$SCRIPT_DIR"/../../gradlew -p "$SCRIPT_DIR"/../.. generate-docker
 
 cd "$SCRIPT_DIR"/../..
-VERSION=dev docker compose -f "$SCRIPT_DIR"/../../docker-compose.yaml up &
+VERSION=0.50.37 docker compose -f "$SCRIPT_DIR"/../../docker-compose.yaml up &
 
 sleep 75
-VERSION=dev docker compose down
+VERSION=0.50.37 docker compose down
 
 git stash
 git checkout $NEW_HASH
 "$SCRIPT_DIR"/../../gradlew -p "$SCRIPT_DIR"/../.. generate-docker
 
-VERSION=dev docker compose -f "$SCRIPT_DIR"/../../docker-compose.yaml up
+VERSION=0.50.37 docker compose -f "$SCRIPT_DIR"/../../docker-compose.yaml up
