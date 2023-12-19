@@ -22,10 +22,10 @@ init_entry_point() {
 
   if [[ "${BIND_ON_IP}" =~ ":" ]]; then
       # ipv6
-      export TEMPORAL_CLI_ADDRESS="[${BIND_ON_IP}]:7233"
+      export TEMPORAL_CLI_ADDRESS="[${BIND_ON_IP}]:7234"
   else
       # ipv4
-      export TEMPORAL_CLI_ADDRESS="${BIND_ON_IP}:7233"
+      export TEMPORAL_CLI_ADDRESS="${BIND_ON_IP}:7234"
   fi
 
   dockerize -template ./config/config_template.yaml:./config/docker.yaml
